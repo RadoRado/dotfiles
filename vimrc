@@ -109,5 +109,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'leshill/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'indenthtml.vim'
+Plugin 'tpope/vim-markdown'
 
 call vundle#end()
+
+colorscheme obsidian
