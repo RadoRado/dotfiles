@@ -117,6 +117,7 @@ Plugin 'leshill/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'indenthtml.vim'
 Plugin 'tpope/vim-markdown'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
