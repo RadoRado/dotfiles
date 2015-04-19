@@ -14,10 +14,15 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 
 alias zconf="vi ~/.zshrc"
 alias c="cd ~/code"
-alias py="python3.4"
 alias scm="plt-r5rs"
 alias omgwtf="sudo kill -9 $(pgrep NetworkManager)"
 alias rmd="vi README.md"
+
+alias gs="git status"
+alias gm="git commit"
+alias ga="git add"
+alias up="git push"
+alias down="git pull"
 
 # Load z
 source /home/radorado/code/z/z.sh
