@@ -98,8 +98,8 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
-vnoremap <C-c> "*y
-
+vnoremap <C-c> "+y
+nnoremap <C-a> ggVG
 
 "------------------------------------------------------------"
 
