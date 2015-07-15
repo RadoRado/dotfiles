@@ -137,5 +137,4 @@ Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
-"colorscheme obsidian"
-
+colorscheme obsidian
