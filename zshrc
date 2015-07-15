@@ -36,6 +36,10 @@ send_key() {
   cat ~/.ssh/id_rsa.pub | ssh $1 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 }
 
+# Zip entire folder
+zap() {
+  zip -r $1 $(ls)
+}
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source /home/radorado/.rvm/scripts/rvm
