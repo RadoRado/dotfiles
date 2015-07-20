@@ -101,6 +101,11 @@ nnoremap <C-L> :nohl<CR><C-L>
 vnoremap <C-c> "+y
 nnoremap <C-a> ggVG
 
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
