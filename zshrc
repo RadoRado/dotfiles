@@ -23,7 +23,10 @@ alias gm="git commit"
 alias ga="git add"
 alias up="git push"
 alias down="git pull"
+alias cb="git checkout $1"
+alias cbb="git checkout -b $1"
 
+alias v="vi"
 # Load z
 source /home/radorado/code/z/z.sh
 
