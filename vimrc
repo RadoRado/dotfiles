@@ -142,6 +142,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'indenthtml.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 
