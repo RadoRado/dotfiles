@@ -126,6 +126,19 @@ endif
 
 "------------------------------------------------------------"
 
+" Remove trailing whitespaces on save for specific file types
+autocmd FileType c,cpp,python,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+
+" Recommended syntastic features
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 execute pathogen#infect()
 
 " Vundle "
@@ -144,6 +157,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-endwise'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
