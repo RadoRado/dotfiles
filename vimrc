@@ -136,10 +136,25 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Syntastic rules. Mostly taken from
+" https://github.com/gsamokovarov/.files/blob/master/.vimrc#L382-L404
+
+let g:syntastic_enable_signs=1
+
+" Try to optimize syntastic in terminal Vim as its already 0 on MacVim.
+let syntastic_full_redraws=0
+let g:syntastic_enable_highlighting=0
+
+" Add some fancy symbols for the error and warning messages.
+let g:syntastic_error_symbol='✗'
+let g:syntastic_style_error_symbol='✠'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_warning_symbol='≈'
+
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 
 let g:syntastic_ruby_checkers = ['rubocop']
 
