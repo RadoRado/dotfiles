@@ -27,8 +27,12 @@ alias cb="git checkout $1"
 alias cbb="git checkout -b $1"
 
 alias v="vi"
+
 # Load z
 source /home/radorado/code/z/z.sh
+
+# Load j
+eval "$(jump shell zsh)"
 
 # Export nvm
 export NVM_DIR="/home/radorado/.nvm"
@@ -44,5 +48,5 @@ zap() {
   zip -r $1 $(ls)
 }
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source /home/radorado/.rvm/scripts/rvm
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
