@@ -98,7 +98,11 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+" Map <C-c> to yank the current selection into buffer
 vnoremap <C-c> "+y
+
+" Map <C-a> to select the entire content of the file
 nnoremap <C-a> ggVG
 
 noremap <Up> <NOP>
