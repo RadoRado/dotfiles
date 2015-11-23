@@ -162,6 +162,10 @@ let g:syntastic_check_on_wq = 1
 
 let g:syntastic_ruby_checkers = ['rubocop']
 
+" Have _ to be keyword for Ruby development
+set iskeyword-=_
+
+
 execute pathogen#infect()
 
 " Vundle "
@@ -181,6 +185,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
+Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()
 
