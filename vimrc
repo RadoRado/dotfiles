@@ -161,6 +161,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_python_checkers = ['pep8']
 
 " Have _ to be keyword for Ruby development
 set iskeyword-=_
