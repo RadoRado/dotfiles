@@ -28,6 +28,7 @@ alias cbb="git checkout -b $1"
 
 alias v="vi"
 alias pmr="python3 manage.py runserver"
+alias pmt="python3 manage.py test"
 
 # Load z
 source /home/radorado/code/z/z.sh
