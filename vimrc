@@ -110,6 +110,18 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
+nnoremap <silent> <C-Right> :vsp<CR>
+nnoremap <silent> <C-Up> :sp<CR>
+
 " Open and close NerdTree with <C-n>
 map <silent> <C-n> :NERDTreeToggle<CR>
 map <C-z> <NOP>
