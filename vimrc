@@ -126,6 +126,8 @@ nnoremap <silent> <C-Up> :sp<CR>
 map <silent> <C-n> :NERDTreeToggle<CR>
 map <C-z> <NOP>
 
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
