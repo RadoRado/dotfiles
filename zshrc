@@ -25,6 +25,7 @@ alias up="git push"
 alias down="git pull"
 alias cb="git checkout $1"
 alias cbb="git checkout -b $1"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 alias v="vi"
 alias pmr="python3 manage.py runserver"
@@ -48,6 +49,10 @@ send_key() {
 # Zip entire folder
 zap() {
   zip -r $1 $(ls)
+}
+
+pygo() {
+  workon $1 && j $1
 }
 
 export PATH="$HOME/.rbenv/bin:$PATH"
