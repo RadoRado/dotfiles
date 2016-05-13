@@ -8,7 +8,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export SCALA_HOME="/home/radorado/scala-2.11.8/"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH=$PATH:$SCALA_HOME/bin
+
 
 # Aliases
 
