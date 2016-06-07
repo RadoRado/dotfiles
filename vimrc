@@ -156,15 +156,6 @@ let mapleader=","
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 " Enable folding
 set foldmethod=indent
@@ -222,7 +213,6 @@ Plugin 'leshill/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'indenthtml.vim'
 Plugin 'tpope/vim-markdown'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
@@ -230,6 +220,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'derekwyatt/vim-scala'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
