@@ -34,8 +34,6 @@ alias v="vi"
 alias pmr="python3 manage.py runserver"
 alias pmt="python3 manage.py test"
 
-# Load z
-source /home/radorado/code/z/z.sh
 
 # Load j
 eval "$(jump shell zsh)"
@@ -58,12 +56,15 @@ pygo() {
   workon $1 && j $1
 }
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+killport() {
+  fuser -k $1/tcp
+}
+
 
 # virtualenvwrapper
 
-export WORKON_HOME=$HOME/code/envs
+export WORKON_HOME=$HOME/code/python-envs
 export PROJECT_HOME=$HOME/code
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
+export PATH="$HOME/.rbenv/bin:$PATH"
