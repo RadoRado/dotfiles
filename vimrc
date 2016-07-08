@@ -221,6 +221,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'derekwyatt/vim-scala'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 

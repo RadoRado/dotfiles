@@ -60,6 +60,10 @@ killport() {
   fuser -k $1/tcp
 }
 
+copyfile() {
+  xclip -i -selection clipboard -t $1
+}
+
 
 # virtualenvwrapper
 
