@@ -153,9 +153,8 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 let mapleader=","
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+autocmd FileType python setlocal completeopt-=preview
 
 " Enable folding
 set foldmethod=indent
@@ -224,7 +223,6 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'derekwyatt/vim-scala'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-repeat'
@@ -232,6 +230,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'kana/vim-textobj-user'
 Plugin 'bps/vim-textobj-python'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
