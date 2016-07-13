@@ -230,12 +230,16 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'kana/vim-textobj-user'
+Plugin 'bps/vim-textobj-python'
 
 call vundle#end()
 
 colorscheme obsidian
 
 call expand_region#custom_text_objects('python', {
-      \ 'ii' :0,
-      \ 'ai' :0,
+      \ 'af' :1,
+      \ 'if' :1,
+      \ 'ac' :1,
+      \ 'ic' :1,
       \ })
