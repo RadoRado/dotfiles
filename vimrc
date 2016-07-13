@@ -197,6 +197,10 @@ let g:syntastic_javascript_checkers = ['jshint']
 " Have _ to be keyword for Ruby development
 set iskeyword-=_
 
+" Region expand settings
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
 
 execute pathogen#infect()
 
@@ -222,7 +226,16 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'derekwyatt/vim-scala'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'terryma/vim-expand-region'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 
 colorscheme obsidian
+
+call expand_region#custom_text_objects('python', {
+      \ 'ii' :0,
+      \ 'ai' :0,
+      \ })
