@@ -29,6 +29,7 @@ alias down="git pull"
 alias cb="git checkout $1"
 alias cbb="git checkout -b $1"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gbpurge="git branch --merged | grep -v "\*" | grep -v "master" | xargs -n 1 git branch -d"
 
 alias v="vi"
 alias pmr="python3 manage.py runserver"
