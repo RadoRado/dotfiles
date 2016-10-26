@@ -193,6 +193,12 @@ let g:syntastic_python_checkers = ['pep8']
 let g:syntastic_javascript_checkers = ['jshint']
 " let g:syntastic_ruby_rubocop_exec      = '/home/radorado/.rbenv/shims/ruby /home/radorado/.rbenv/shims/rubocop'
 
+" ctrl-p settings
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|node_modules|bower_components)$',
+  \ 'file': '\v\.(celerybeat-schedule|jpeg|png)$'
+  \ }
+
 " Have _ to be keyword for Ruby development
 set iskeyword-=_
 
