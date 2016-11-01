@@ -194,10 +194,15 @@ let g:syntastic_javascript_checkers = ['jshint']
 " let g:syntastic_ruby_rubocop_exec      = '/home/radorado/.rbenv/shims/ruby /home/radorado/.rbenv/shims/rubocop'
 
 " ctrl-p settings
+let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|node_modules|bower_components)$',
+  \ 'dir':  '\v[\/](\.git|node_modules|bower_components|__pycache__)$',
   \ 'file': '\v\.(celerybeat-schedule|jpeg|png)$'
   \ }
+
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " Have _ to be keyword for Ruby development
 set iskeyword-=_
