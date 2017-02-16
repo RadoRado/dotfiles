@@ -100,7 +100,7 @@ map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 
 " Map <C-c> to yank the current selection into buffer
-vnoremap <C-c> "+y
+vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
 
 " Map <C-a> to select the entire content of the file
 nnoremap <C-a> ggVG
