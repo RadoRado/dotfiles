@@ -200,6 +200,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(celerybeat-schedule|jpeg|png)$'
   \ }
 
+let g:jsx_ext_required = 0
+
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
@@ -242,6 +244,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'kana/vim-textobj-user'
 Plugin 'bps/vim-textobj-python'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 
