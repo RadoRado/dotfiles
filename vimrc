@@ -213,6 +213,8 @@ set iskeyword-=_
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+xmap json !python -m json.tool<CR>
+
 
 execute pathogen#infect()
 
@@ -245,6 +247,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'bps/vim-textobj-python'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'isRuslan/vim-es6'
 
 call vundle#end()
 
