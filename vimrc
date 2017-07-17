@@ -189,7 +189,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_python_checkers = ['pep8']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['jshint']
 " let g:syntastic_ruby_rubocop_exec      = '/home/radorado/.rbenv/shims/ruby /home/radorado/.rbenv/shims/rubocop'
 
@@ -213,7 +213,7 @@ set iskeyword-=_
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-xmap json !python -m json.tool<CR>
+xmap fjson !python -m json.tool<CR>
 
 
 execute pathogen#infect()
@@ -248,6 +248,7 @@ Plugin 'bps/vim-textobj-python'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 
