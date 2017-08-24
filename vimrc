@@ -215,6 +215,8 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 xmap fjson !python -m json.tool<CR>
 
+" Prettier
+let g:prettier#autoformat = 0
 
 execute pathogen#infect()
 
@@ -249,6 +251,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'rust-lang/rust.vim'
+Plugin 'prettier/vim-prettier'
 
 call vundle#end()
 
