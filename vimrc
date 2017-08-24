@@ -190,8 +190,6 @@ let g:syntastic_check_on_wq = 1
 
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_javascript_checkers = ['jshint']
-" let g:syntastic_ruby_rubocop_exec      = '/home/radorado/.rbenv/shims/ruby /home/radorado/.rbenv/shims/rubocop'
 
 " ctrl-p settings
 let g:ctrlp_clear_cache_on_exit = 0
