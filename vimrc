@@ -215,6 +215,7 @@ xmap fjson !python -m json.tool<CR>
 
 " Prettier
 let g:prettier#autoformat = 0
+let g:prettier#config#trailing_comma = 'none'
 
 execute pathogen#infect()
 
