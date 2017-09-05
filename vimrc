@@ -216,6 +216,13 @@ xmap fjson !python -m json.tool<CR>
 " Prettier
 let g:prettier#autoformat = 0
 let g:prettier#config#trailing_comma = 'none'
+" max line lengh that prettier will wrap on
+let g:prettier#config#print_width = 80
+" number of spaces per indentation level
+let g:prettier#config#tab_width = 2
+" use tabs over spaces
+let g:prettier#config#use_tabs = 'false'
+
 
 execute pathogen#infect()
 
