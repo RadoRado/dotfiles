@@ -73,7 +73,6 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F12> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F12>
 
-
 "------------------------------------------------------------
 " Indentation options {{{1
 "
@@ -85,6 +84,21 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set expandtab
+
+" Watch for file changes.
+set autoread
+
+" Don't redraw while executing commands from macros and registers.
+set lazyredraw
+set ttyfast
+
+" Start scrolling when you reach three lines before the end of the screen.
+" Helps with the neck pain.
+set scrolloff=3
+
+" Make you keyboard actually do something while you are switched to Cyrillic
+" layout. Ripped off @StanAngeloff.
+set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
 
 "------------------------------------------------------------
 " Mappings {{{1
