@@ -122,11 +122,20 @@ set splitright
 nnoremap <silent> <C-Right> :vsp<CR>
 nnoremap <silent> <C-Up> :sp<CR>
 
+" Use tab to exit insert mode
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+cnoremap <Tab> <C-C><Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
+
+
 " Open and close NerdTree with <C-n>
 map <silent> <C-n> :NERDTreeToggle<CR>
 map <C-z> <NOP>
 
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', 'node_modules', 'bower_components']
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -146,7 +155,7 @@ endif
 "------------------------------------------------------------"
 
 " Remove trailing whitespaces on save for specific file types
-autocmd FileType c,cpp,python,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,python,ruby,javascript,jsx autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Flagging Unnecessary Whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
