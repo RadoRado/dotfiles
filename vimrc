@@ -136,15 +136,6 @@ set splitright
 nnoremap <silent> <C-Right> :vsp<CR>
 nnoremap <silent> <C-Up> :sp<CR>
 
-" Use tab to exit insert mode
-nnoremap <Tab> <Esc>
-vnoremap <Tab> <Esc>gV
-onoremap <Tab> <Esc>
-cnoremap <Tab> <C-C><Esc>
-inoremap <Tab> <Esc>`^
-inoremap <Leader><Tab> <Tab>
-
-
 " Open and close NerdTree with <C-n>
 map <silent> <C-n> :NERDTreeToggle<CR>
 map <C-z> <NOP>
@@ -245,6 +236,8 @@ let g:prettier#config#print_width = 80
 let g:prettier#config#tab_width = 2
 " use tabs over spaces
 let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#single_quote = 'true'
+
 
 
 execute pathogen#infect()
