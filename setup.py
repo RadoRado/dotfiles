@@ -4,7 +4,7 @@ from os.path import expanduser, isfile
 
 def main():
     print("Setup script for dotfiles.")
-    rc_files = glob("*rc")
+    rc_files = glob("*rc*")
     cwd = os.getcwd()
     home = expanduser("~")
     for rc in rc_files:

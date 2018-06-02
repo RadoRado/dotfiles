@@ -207,10 +207,7 @@ let g:syntastic_python_checkers = ['flake8']
 
 " ctrl-p settings
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|node_modules|bower_components|__pycache__)$',
-  \ 'file': '\v\.(celerybeat-schedule|jpeg|png)$'
-  \ }
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|build|yarn\.lock)|(\.(swp|ico|git|svn))$'
 
 let g:jsx_ext_required = 0
 
@@ -274,6 +271,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'rust-lang/rust.vim'
 Plugin 'prettier/vim-prettier'
+Plugin 'amoffat/snake'
 
 call vundle#end()
 
@@ -285,3 +283,7 @@ call expand_region#custom_text_objects('python', {
       \ 'ac' :1,
       \ 'ic' :1,
       \ })
+
+if filereadable(expand("~/.vim/bundle/snake/plugin/snake.vim"))
+    source ~/.vim/bundle/snake/plugin/snake.vim
+endif

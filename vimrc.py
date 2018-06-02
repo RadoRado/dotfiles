@@ -1,0 +1,1 @@
+from snake.plugins import vim_react_goto_definition_plugin
