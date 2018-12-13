@@ -9,6 +9,9 @@
 [alias]
   s = status
   a = add -p
+  m = commit
+  c = checkout
+
 	# List Git aliases with definitions
 	aliases = ! git config --get-regexp ^alias\\. | grep -v "^alias\\.aliases" | sed -e 's/^alias\\.//' -e 's/\\ /\\ =\\ /'
   #
@@ -28,3 +31,6 @@
   # This way force push is safer as it wouldn't overwrite commits by other team members
   # pushed to the remote branch after you've last pulled and rewritten some history.
   pf = push --force-with-lease
+
+  prs = pr list
+  pro = pull-request -o

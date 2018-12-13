@@ -80,3 +80,5 @@ eval "$(pyenv init -)"
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+eval "$(hub alias -s)"
