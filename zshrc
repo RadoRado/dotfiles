@@ -31,6 +31,7 @@ alias cbb="git checkout -b $1"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gbpurge="git branch --merged | grep -v \"\*\" | grep -v \"master\" | xargs -n 1 git branch -d"
 alias b="git branch | cut -c 3- | fzy | xargs git checkout"
+alias findpid="ps axww -o pid,user,%cpu,%mem,start,time,command | fzy | sed 's/^ *//' | cut -f1 -d' '"
 
 alias v="vi"
 alias pmr="python3 manage.py runserver"
