@@ -271,7 +271,6 @@ Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'rust-lang/rust.vim'
 Plugin 'prettier/vim-prettier'
-Plugin 'amoffat/snake'
 
 call vundle#end()
 
@@ -283,7 +282,3 @@ call expand_region#custom_text_objects('python', {
       \ 'ac' :1,
       \ 'ic' :1,
       \ })
-
-if filereadable(expand("~/.vim/bundle/snake/plugin/snake.vim"))
-    source ~/.vim/bundle/snake/plugin/snake.vim
-endif

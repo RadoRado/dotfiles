@@ -30,6 +30,7 @@ alias goto="git checkout $1"
 alias cbb="git checkout -b $1"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gbpurge="git branch --merged | grep -v \"\*\" | grep -v \"master\" | xargs -n 1 git branch -d"
+alias b="git branch | cut -c 3- | fzy | xargs git checkout"
 
 alias v="vi"
 alias pmr="python3 manage.py runserver"
@@ -71,7 +72,7 @@ copyfile() {
 export WORKON_HOME=$HOME/code/python-envs
 export PROJECT_HOME=$HOME/code
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
+source /home/radorado/.local/bin/virtualenvwrapper.sh
 export PATH="$HOME/.rbenv/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PYENV_ROOT="$HOME/.pyenv"
