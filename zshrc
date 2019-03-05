@@ -67,6 +67,15 @@ copyfile() {
   xclip -i -selection clipboard -t $1
 }
 
+ww() {
+  if [ -z $1 ]
+  then
+    echo "Pass project name"
+  else
+    cat "$HOME/code/ww/$1" | xargs sensible-browser > /dev/null 2>&1
+  fi
+}
+
 
 # virtualenvwrapper
 
