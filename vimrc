@@ -236,6 +236,14 @@ let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#single_quote = 'true'
 
 
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
+
+" To map your shortcut for autofilling import for the word under the cursor
+nnoremap <C-@> :call PythonDomainKnowledgeFillImport()<CR>
+
+" To map your shortcut for global searching
+noremap <C-m> :call PythonDomainKnowledgeSearch()<Cr>
 
 execute pathogen#infect()
 
@@ -271,6 +279,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'rust-lang/rust.vim'
 Plugin 'prettier/vim-prettier'
+Plugin 'HackSoftware/vim-python-domain-knowledge'
 
 call vundle#end()
 

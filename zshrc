@@ -93,3 +93,9 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(hub alias -s)"
+
+export PATH=$PATH:/home/radorado/.go/bin
+
+export GOPATH=/home/radorado/go
+
+export PATH=$PATH:/home/radorado/go/bin
