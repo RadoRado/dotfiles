@@ -263,10 +263,8 @@ Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'derekwyatt/vim-scala'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-repeat'
@@ -277,9 +275,7 @@ Plugin 'bps/vim-textobj-python'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
-Plugin 'rust-lang/rust.vim'
 Plugin 'prettier/vim-prettier'
-Plugin 'HackSoftware/vim-python-domain-knowledge'
 
 call vundle#end()
 
