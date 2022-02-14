@@ -222,6 +222,14 @@ set iskeyword-=_
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+" Taken from Ivaylo Donchev
+" A quick util to autoformat python-like dictionary or list to json
+com! FormatJSON %s/'/"/ge
+      \ | %s/True/true/ge
+      \ | %s/False/false/ge
+      \ | %s/None/null/ge
+      \ | %!python -m json.tool
+
 xmap fjson !python -m json.tool<CR>
 
 " Prettier
