@@ -7,7 +7,7 @@ vim.opt.relativenumber = true
 -- allow mouse in all modes
 vim.opt.mouse = 'a'
 
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 vim.opt.autoindent = true
 
 -- search related configs
