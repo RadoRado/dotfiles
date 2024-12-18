@@ -8,9 +8,6 @@
 -- o: Operator-pending.
 -- '': Yes, an empty string. Is the equivalent of n + v + o.
 
--- Open default file browser
-vim.keymap.set("n", "<leader>n", vim.cmd.Ex)
-
 -- ,w saves
 vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {desc= 'Save'})
 
