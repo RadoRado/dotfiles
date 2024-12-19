@@ -45,7 +45,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     -- Perhaps we can go with automatic_installation = true
     automatic_installation = false,
-    ensure_installed = {"lua_ls", "pyright"},
+    ensure_installed = {"lua_ls", "pyright", "ts_ls"},
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({})
@@ -66,6 +66,10 @@ require('lspconfig').pyright.setup({
             }
         }
     }
+})
+
+require("lspconfig").ts_ls.setup({
+    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ts_ls
 })
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
