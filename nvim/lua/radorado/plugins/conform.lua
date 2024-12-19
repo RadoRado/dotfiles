@@ -19,8 +19,10 @@ return {
 			})
 
 			vim.keymap.set("n", "<leader>f", function()
-				print("Running formatter")
-				require("conform").format()
+				require("conform").format({
+					timeout_ms = 500,
+					lsp_format = "never",
+				})
 			end)
 		end,
 	},
