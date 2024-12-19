@@ -2,7 +2,7 @@ return {
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
         -- or                              , branch = '0.1.x',
-        dependencies = { 
+        dependencies = {
             {'nvim-lua/plenary.nvim'},
             {'nvim-telescope/telescope-fzf-native.nvim', build = 'make'}
         },
@@ -22,7 +22,6 @@ return {
                 }
             })
 
-            -- vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = 'Telescope find files' })
             vim.keymap.set('n', '<C-p>', function()
                 local ok, _ = pcall(builtin.git_files)
 
@@ -32,7 +31,6 @@ return {
 
             end, { desc = 'Telescope find files' })
 
-            -- vim.keymap.set('n', '<C-F>', builtin.find_files, { desc = 'Telescope find files' })
             vim.keymap.set('n', '<C-s>', builtin.live_grep, { desc = 'Telescope live grep' })
         end,
     }
