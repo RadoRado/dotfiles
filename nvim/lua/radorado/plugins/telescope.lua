@@ -23,6 +23,8 @@ return {
 				},
 			})
 
+			require("telescope").load_extension("fzf")
+
 			vim.keymap.set("n", "<C-p>", function()
 				local ok, _ = pcall(builtin.git_files)
 
