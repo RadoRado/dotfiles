@@ -5,7 +5,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- allow mouse in all modes
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 vim.opt.cursorline = true
 vim.opt.autoindent = true
@@ -34,5 +34,5 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "120"
 
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
