@@ -15,7 +15,11 @@ return {
 				filesystem = {
 					filtered_items = {
 						hide_gitignored = true,
+						hide_dotfiles = false,
 						hijack_netrw_behavior = "open_current",
+						always_show = {
+							".env",
+						},
 					},
 					follow_current_file = {
 						enabled = true,
@@ -25,6 +29,13 @@ return {
 						follow_current_file = {
 							enable = true,
 							leave_dirs_open = false,
+						},
+					},
+					window = {
+						mappings = {
+							-- We don't want to do fuzzy search in the file tree
+							-- We already have telescope for that
+							["/"] = "noop",
 						},
 					},
 				},
