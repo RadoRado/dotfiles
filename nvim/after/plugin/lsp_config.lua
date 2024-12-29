@@ -1,11 +1,8 @@
 -- Add cmp_nvim_lsp capabilities settings to lspconfig
 -- This should be executed before you configure any language server
--- local lspconfig_defaults = require('lspconfig').util.default_config
--- lspconfig_defaults.capabilities = vim.tbl_deep_extend(
---     'force',
---     lspconfig_defaults.capabilities,
---     require('cmp_nvim_lsp').default_capabilities()
--- )
+local lspconfig_defaults = require("lspconfig").util.default_config
+lspconfig_defaults.capabilities =
+	vim.tbl_deep_extend("force", lspconfig_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 -- This is where you enable features that only work
 -- if there is a language server active in the file
@@ -105,27 +102,45 @@ require("lspconfig").lua_ls.setup({
 
 ---
 -- Autocompletion config
+-- Mostly based on https://lsp-zero.netlify.app/docs/autocomplete.html
 ---
--- local cmp = require('cmp')
---
--- cmp.setup({
---     sources = {
---         {name = 'nvim_lsp'},
---     },
---     mapping = cmp.mapping.preset.insert({
---         -- `Enter` key to confirm completion
---         ['<CR>'] = cmp.mapping.confirm({select = false}),
---
---         -- Ctrl+Space to trigger completion menu
---         ['<C-Space>'] = cmp.mapping.complete(),
---
---         -- Scroll up and down in the completion documentation
---         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
---         ['<C-d>'] = cmp.mapping.scroll_docs(4),
---     }),
---     snippet = {
---         expand = function(args)
---             vim.snippet.expand(args.body)
---         end,
---     },
--- })
+local cmp = require("cmp")
+
+cmp.setup({
+	sources = {
+		{ name = "nvim_lsp" },
+	},
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
+	completion = {
+		autocomplete = false,
+		completeopt = "menu,menuone,noinsert",
+	},
+	mapping = cmp.mapping.preset.insert({
+		-- `Enter` key to confirm completion
+		["<CR>"] = cmp.mapping.confirm({ select = false }),
+		-- Ctrl+Space to trigger completion menu
+		["<C-Space>"] = cmp.mapping.complete(),
+
+		-- Simple tab complete
+		["<Tab>"] = cmp.mapping(function(fallback)
+			local col = vim.fn.col(".") - 1
+
+			if cmp.visible() then
+				cmp.select_next_item({ behavior = "select" })
+			elseif col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
+				fallback()
+			else
+				cmp.complete()
+			end
+		end, { "i", "s" }),
+	}),
+	preselect = "item",
+	-- snippet = {
+	-- 	expand = function(args)
+	-- 		vim.snippet.expand(args.body)
+	-- 	end,
+	-- },
+})
