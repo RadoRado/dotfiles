@@ -25,19 +25,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- https://neovim.io/doc/user/pattern.html#gd
 		vim.keymap.set("n", "<leader>i", "gd", { remap = true, desc = "LSP: Goto [I]mport" })
 
-		map("<leader>r", "<cmd>lua vim.lsp.buf.references()<cr>", "View [R]eferences")
+		local builtin = require("telescope.builtin")
+		-- map("<leader>r", "<cmd>lua vim.lsp.buf.references()<cr>", "View [R]eferences")
+		map("<leader>r", builtin.lsp_references, "View [R]eferences")
 
 		-- Rename via the LSP
 		map("<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename")
-
-		-- Things below are going to be further explored
-		-- local opts = {buffer = event.buf}
-		-- vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-		-- vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-		-- vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-		-- vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-		-- vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-		-- vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 	end,
 })
 
@@ -56,10 +49,10 @@ require("mason-lspconfig").setup({
 require("lspconfig").pyright.setup({
 	-- https://github.com/microsoft/pyright/blob/main/docs/settings.md
 	-- https://github.com/DNSLV-PMTKV/dotfiles/blob/main/nvim/lua/plugins/lspconfig.lua#L146
+	-- WARN: Those settings are not going to take effect
+	-- WARN: Because Python projects are running with a local pyrightconfig.json
 	settings = {
-		pyright = {
-			-- disableLanguageServices = true
-		},
+		pyright = {},
 		python = {
 			analysis = {},
 		},

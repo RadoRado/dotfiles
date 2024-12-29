@@ -15,11 +15,15 @@ return {
 			-- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#mapping-esc-to-quit-in-insert-mode
 			require("telescope").setup({
 				defaults = {
+					layout_strategy = "horizontal",
 					mappings = {
 						i = {
 							["<esc>"] = actions.close,
 						},
 					},
+				},
+				extensions = {
+					fzf = {},
 				},
 			})
 
@@ -34,6 +38,7 @@ return {
 			end, { desc = "Telescope find files" })
 
 			vim.keymap.set("n", "<C-s>", builtin.live_grep, { desc = "Telescope live grep" })
+			vim.keymap.set("n", "<C-f>", builtin.grep_string, { desc = "Telescope grep string" })
 		end,
 	},
 }
