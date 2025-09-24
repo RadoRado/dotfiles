@@ -1,6 +1,24 @@
 -- Add cmp_nvim_lsp capabilities settings to lspconfig
 -- This should be executed before you configure any language server
 local lspconfig_defaults = require("lspconfig").util.default_config
+
+function dump(o, indent)
+	indent = indent or 0
+	if type(o) == "table" then
+		local s = string.rep("  ", indent) .. "{\n"
+		for k, v in pairs(o) do
+			local key = tostring(k)
+			s = s .. string.rep("  ", indent + 1) .. key .. " = " .. dump(v, indent + 1) .. ",\n"
+		end
+		return s .. string.rep("  ", indent) .. "}"
+	else
+		return tostring(o)
+	end
+end
+
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/util.lua#L10
+-- print(dump(vim.lsp.default_config))
+
 lspconfig_defaults.capabilities =
 	vim.tbl_deep_extend("force", lspconfig_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
@@ -38,12 +56,13 @@ require("mason-lspconfig").setup({
 	ensure_installed = { "lua_ls", "pyright", "ts_ls" },
 	handlers = {
 		function(server_name)
-			require("lspconfig")[server_name].setup({})
+			vim.lsp.config(server_name, {})
+			vim.lsp.enable({ server_name })
 		end,
 	},
 })
 
-require("lspconfig").pyright.setup({
+vim.lsp.config("pyright", {
 	-- https://github.com/microsoft/pyright/blob/main/docs/settings.md
 	-- https://github.com/DNSLV-PMTKV/dotfiles/blob/main/nvim/lua/plugins/lspconfig.lua#L146
 	-- WARN: Those settings are not going to take effect
@@ -55,15 +74,17 @@ require("lspconfig").pyright.setup({
 		},
 	},
 })
+vim.lsp.enable({ "pyright" })
 
-require("lspconfig").ts_ls.setup({
+vim.lsp.config("ts_ls", {
 	-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ts_ls
 })
+vim.lsp.enable({ "ts_ls" })
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
 -- If you primarily use lua-language-server for Neovim, and want to provide completions,
 -- analysis, and location handling for plugins on runtime path, you can use the following settings.
-require("lspconfig").lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	on_init = function(client)
 		if client.workspace_folders then
 			local path = client.workspace_folders[1].name
@@ -99,6 +120,7 @@ require("lspconfig").lua_ls.setup({
 		},
 	},
 })
+vim.lsp.enable({ "lua_ls" })
 
 ---
 -- Autocompletion config
